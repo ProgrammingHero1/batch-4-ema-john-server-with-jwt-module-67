@@ -46,7 +46,7 @@ async function run() {
             const keys = req.body;
             const query = { key: { $in: keys } }
             const products = await productCollection.find(query).toArray();
-            res.json(products);
+            res.send(products);
         });
 
         // Add Orders API
