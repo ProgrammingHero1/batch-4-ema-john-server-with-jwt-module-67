@@ -10,8 +10,8 @@ const port = process.env.PORT || 5000;
 // firebase admin initialization 
 
 
-var serviceAccount = require('./ema-john-simple-e9bd8-firebase-adminsdk-8vnwm-d497344591.json');
-
+var serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+console.log(serviceAccount)
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
