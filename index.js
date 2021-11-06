@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 
 
 var serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
-console.log(serviceAccount)
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
@@ -106,6 +106,9 @@ run().catch(console.dir);
 
 app.get('/', (req, res) => {
     res.send('Ema jon server is running');
+});
+app.get('/a', (req, res) => {
+    res.send('Ema 222jon server is running');
 });
 
 app.listen(port, () => {
